@@ -22,23 +22,24 @@ public class KuisHotel {
            diskon = 0;
         }
 
-        jumlahBayar = totalBayar + pajak - diskon;
+        jumlahBayar = (totalBayar + pajak) * diskon;
+        double total = (totalBayar + pajak) - jumlahBayar;
 
-        return  jumlahBayar;
+        return  total;
     }
 
     public static void main(String[] args) {
         KuisHotel kuisHotelni1 = new KuisHotel();
         KuisHotel kuisHotelni2 = new KuisHotel();
         KuisHotel kuisHotelni3 = new KuisHotel();
-
-        kuisHotelni1.setPelangan("k001", "riska", "1", 2, 2100000);
+//        String[] dataPelangan =
+        kuisHotelni1.setPelangan("k001", "riska", "1", 6, 2100000);
         kuisHotelni2.setPelangan("k002", "lili", "2", 3, 1300000);
         kuisHotelni3.setPelangan("k003", "karin", "3", 1, 1100000);
 
-        System.out.println("jumlah yang harus di bayar " + kuisHotelni1.namaPelangan + " " + kuisHotelni1.getPelangan());
-        System.out.println("jumlah yang harus di bayar " + kuisHotelni2.namaPelangan + " " + kuisHotelni2.getPelangan());
-        System.out.println("jumlah yang harus di bayar " + kuisHotelni3.namaPelangan + " " + kuisHotelni3.getPelangan());
+        System.out.println("jumlah yang harus di bayar " + kuisHotelni1.namaPelangan + " " + String.format("%.2f", kuisHotelni1.getPelangan()));
+        System.out.println("jumlah yang harus di bayar " + kuisHotelni2.namaPelangan + " " + String.format("%.2f", kuisHotelni2.getPelangan()));
+        System.out.println("jumlah yang harus di bayar " + kuisHotelni3.namaPelangan + " " + String.format("%.2f", kuisHotelni3.getPelangan()));
 
     }
 }
