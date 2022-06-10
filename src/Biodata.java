@@ -1,5 +1,5 @@
 public class Biodata {
-    public String nama,nis, kode_mk, mata_kuliah;
+    private String nama,nis, kode_mk, mata_kuliah;
 
     public void setNama(String nama) {
         this.nama = nama;
